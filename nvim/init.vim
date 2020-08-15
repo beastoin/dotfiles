@@ -48,6 +48,7 @@ noremap <silent> <leader>s :call go#lsp#Exit()<cr>
 
 tnoremap <leader>q <C-\><C-n>:q!<CR>
 
+" MAP COC
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
