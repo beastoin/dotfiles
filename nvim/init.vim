@@ -6,10 +6,14 @@ Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'nsf/gocode', { 'tag': 'v.20170907', 'rtp': 'vim' }
 Plug 'scrooloose/nerdTree'
 Plug 'sainnhe/gruvbox-material'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'srcery-colors/srcery-vim'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
+"Plug 'natebosch/vim-lsc'
+"Plug 'natebosch/vim-lsc-dart'
+"Plug 'thosakwe/vim-flutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -18,6 +22,13 @@ let mapleader=";"
 set completeopt-=preview
 set autowrite
 " set number
+" set relativenumber
+" set rnu
+
+" LSC
+" let g:lsc_auto_map = v:true
+let g:lsc_enable_autocomplete = v:false
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
 " GOLANG
 let g:go_fmt_command = "goimports"
@@ -28,6 +39,20 @@ if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufWritePost *.go :GoBuild
 endif
+
+" DART
+let g:dart_format_on_save = 1
+let g:dart_style_guide = 0
+
+" FLUTTER
+" g:flutter_show_log_on_run = 0
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+
+" FZF
+" let g:fzf_layout = { 'window': {'width': 1.0, 'height': 1.0}}
+let g:fzf_layout = { 'down': '100%'}
 
 " COMMAND
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path="0;33"', <bang>0)
@@ -55,7 +80,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " COLOR
-set termguicolors
-set background=dark
+"color srcery
 color gruvbox-material
 " color gruvbox
+"color gruvbox
+"color nord
+set background=dark
+set termguicolors

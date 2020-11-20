@@ -1,8 +1,11 @@
 {
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "filetypes": ["go"]
-    }
-  }
+  },
+  "diagnostic.enable": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart"
+  ],
+  "suggest.triggerCompletionWait": 200,
+  "suggest.enablePreview": false,
+  "flutter.lsp.initialization.closingLabels": false
 }
