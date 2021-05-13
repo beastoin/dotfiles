@@ -2,26 +2,26 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'nsf/gocode', { 'tag': 'v.20170907', 'rtp': 'vim' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'scrooloose/nerdTree'
 Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'srcery-colors/srcery-vim'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc', {'tag': 'v0.4.0'}
 Plug 'natebosch/vim-lsc-dart'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
 
 " BASIC
 let mapleader=";"
 set completeopt-=preview
 set autowrite
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 set timeoutlen=160
+set mmp=5000
 
 " LSC
 let g:lsc_enable_autocomplete = v:false
